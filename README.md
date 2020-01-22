@@ -1,4 +1,4 @@
-# Jia-Portfolio Page
+# Yajun Jia Data Science Portfolio Page
 
 How is it going?
 
