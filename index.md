@@ -9,7 +9,7 @@
 
 ---
 [Customer Purchasing Behavior via Clustering Analysis](https://github.com/drmonkey123/miagitpractice/blob/master/Project2/hierarchical%20clustering%20analysis.Rmd)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/Hierarchical-Clustering-Analysis-1.png"/>
 
 ---
 [Project 3 Title](http://example.com/)
