@@ -1,6 +1,6 @@
 # Jia-Portfolio Page
 
-How's it going?
+How is it going?
 
 I'm Yajun Jia.
 
