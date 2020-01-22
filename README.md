@@ -1,19 +1,7 @@
-# Jia-Portforlio Page
+# Jia-Portfolio Page
 
-```markdown
-Syntax highlighted code block
+How's it going?
 
-# Header 1
-## Header 2
-### Header 3
+I'm Yajun Jia.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
+I'm a data analyst/research analyst/number lover.
