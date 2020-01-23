@@ -5,7 +5,7 @@
 ### Category Name 1 
 
 [Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/dummy_thumbnail.jpg?small=true"/>
 
 ---
 [Customer Purchasing Behavior via Clustering Analysis](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
