@@ -3,10 +3,10 @@
 
 ### Skills
 
-- Programming: R | Python | SAS | SPSS | Mplus
-- Database: SQL (i.e. Postgresql) | AWS Redshift
-- Data Visualization: Tableau | Looker
-- Software & Tools: Git | Qualtrics | MS Office | LaTex
+- Programming: R, Python, SAS, SPSS, Mplus
+- Database: SQL (i.e. Postgresql), AWS Redshift
+- Data Visualization: Tableau, Looker
+- Software & Tools: Git, Qualtrics, MS Office, LaTex
 
 ---
 
