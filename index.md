@@ -30,7 +30,7 @@
 - [Project 1 Title](http://example.com/)
 - [Project 2: Unsupervised Machine Learning](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
 - [Project 3: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
-- 
+
 ---
 
 
