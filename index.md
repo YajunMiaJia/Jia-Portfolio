@@ -16,7 +16,7 @@
 <img src="images/dummy_thumbnail.jpg?small=true"/>
 
 ---
-[Project 2: Customer Purchasing Behavior via Clustering Analysis](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
+[Project 2: Customer Purchasing Behavior via Clustering Analysis](Project 2/ClusteringAnalysis.pdf)
 <img src="images/Clustering Analysis.png"/>
 
 ---
