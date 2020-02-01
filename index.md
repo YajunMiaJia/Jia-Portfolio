@@ -12,8 +12,8 @@
 
 ### Project
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?small=true"/>
+[Project 1: Time Series Analysis for Predicting Milk Production](/Project 1/Time Series Analysis.pdf)
+<img src="images/TimeSeries.png"/>
 
 ---
 [Project 2: Customer Purchasing Behavior via Clustering Analysis](/Project 2/ClusteringAnalysis.pdf)
@@ -27,7 +27,7 @@
 
 ### Methodology & Script
 
-- [Project 1 Title](http://example.com/)
+- [Project 1: Time Series Analysis for Predicting Milk Production](http://example.com/)
 - [Project 2: Unsupervised Machine Learning](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
 - [Project 3: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
 
