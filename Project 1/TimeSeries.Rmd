@@ -1,0 +1,76 @@
+---
+title: "Time Series Analysis"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Time Series Analysis is a powerful technique for understanding patterns in our data by decomposing data into different cyclic trends. It can be used to predict how a variable will change in the future by using the data in the past.
+
+```{r warning=FALSE, message=FALSE, error=FALSE}
+# Time Series Analysis
+
+# Load packages
+library(ggplot2)
+library(forecast)
+library(colortools)
+
+# Load data
+setwd("/cloud/project/Time Series Analysis")
+monthly_milk <- read.csv("Month_Milk.csv")
+
+head(monthly_milk)
+
+# Format date
+# Monthly_Milk
+monthly_milk$month_date <- format(monthly_milk$month_date, format = "%Y-%B-%u")
+monthly_milk$month_date <- as.Date(monthly_milk$month)
+class(monthly_milk$month_date)
+
+# Plot time series data -------------------------------------
+# Using scale_x_date
+ggplot(monthly_milk, aes(x = month_date, y = milk_per_cow_kg)) +
+         geom_line() +
+         scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
+         theme_classic()
+# View trend using loess smooth
+ggplot(monthly_milk, aes(x = month_date, y = milk_per_cow_kg)) +
+  geom_line() +
+  geom_smooth(method = "loess", se = FALSE, span = 0.6) +
+  theme_classic()
+
+# Using ts objects to decompose trends ---------------------
+# Transform to `ts` class
+monthly_milk_ts <- ts(monthly_milk$milk_per_cow_kg, start = 2006, end = 2019, frequency = 12)
+# Decompose using `stl()`
+monthly_milk_stl <- stl(monthly_milk_ts, s.window = "period")
+# Plot
+plot(monthly_milk_stl)
+# Note:1=original data, 2=estimated seasonal, 3=estimated smooth trend, 4=estimated irregular
+# de-seasonalize
+ts.season <- seasadj(monthly_milk_stl)
+seasonplot(ts.season, 12, col = rainbow(12), year.labels = TRUE, main = "Seasonal plot: milk produce")
+
+# Forcasting -----------------------------------------------
+# Exponential Models
+# simple exponential - model level
+fit <- HoltWinters(ts.season, beta = FALSE, gamma = FALSE)
+# double exponential - model, trend
+fit <- HoltWinters(ts.season, gamma = FALSE)
+# triple exponential - model, trend, seasonal components
+fit <- HoltWinters(ts.season)
+# Predict
+forecast(fit, 30)
+plot(forecast(fit, 30))
+
+# Automated forecasting
+fit <- ets(ts.season) #Error, Trend, Seasonality
+fit <- auto.arima(ts.season)
+accuracy(fit)
+forecast(fit, 30)
+plot(forecast(fit, 30), main = "Forecasts from ARIMA")
+```
