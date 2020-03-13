@@ -1,0 +1,120 @@
+---
+title: "Imputation & Weighting example"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Imputation
+
+This is an example code of missing data imputation using MICE package.
+
+```{r cars}
+## Import example data
+data <- airquality
+data_sub <- data[,c(1,2)]
+summary(data_sub)
+
+## Quick view of missing data
+pMiss <- function(x){sum(is.na(x))/length(x)*100}
+apply(data_sub, 2, pMiss)
+
+## Look at missing data pattern
+library(mice)
+md.pattern(data_sub)
+```
+
+Results indicated that 111 observations have complete data, 35 observations have missing data in variable Ozone, 5 observations have missing data in variable Solar.R, and 2 observations have missing data on both variables.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+## Look at missing data pattern with more plots
+library(VIM)
+plot1 <- aggr(data_sub, col=c('blue','pink'), number=TRUE,
+              sortVars=TRUE, labels=names(data_sub), cex.axis=.7,
+              gap=3, ylab=c("Histogram of missing data",
+                            "Pattern"))
+```
+
+The plots showed that 72.50% of data are complete, 22.90% of data has missing value on Solar.R variable, 3.30% of data has missing value on Ozone variable, and 1.30% of data has missing values on both variables.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+## Imputing missing data
+# using predictive mean matching imputation
+data_impute <- mice(data_sub, m=5, meth='pmm', maxit=50, seed=500)
+summary(data_impute)
+
+## Check the imputed data for variables
+data_impute$imp$Ozone
+data_impute$imp$Solar.R
+
+## Get the completed dataset after imputing missing data
+data_complete <- complete(data_impute, 1)
+md.pattern(data_complete)
+```
+
+Results indicated that now there is no missing value in the dataset.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+## Inspecting the distribution of original and imputed data
+densityplot(data_impute)
+```
+
+We expect the distributions of original and imputed dataset to be similar. The distribution of original dataset is plotted in blue and the imputed dataset is plotted in red. As the plots showed, for both variables, the distributions of original and imputed dataset are similar.
+
+## Weighting
+
+The following code of survey weights will be demonstrated using a fake dataset. This weighting process will be mimic the situation where we have certain demongraphic variables (gender in the following analysis) may not be representative of the population. The assumption is that the population variable is available.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+## Generate variables and created dataset
+set.seed(12345)
+gender = c("Female", "Male")
+gender = sample(gender, 100, replace = TRUE)
+gender = as.numeric(factor(gender))
+ethnicity = c("White", "African_American", "Other")
+ethnicity = sample(ethnicity, 100, replace = TRUE)
+ethnicity = as.numeric(factor(ethnicity))
+income = c(0:100000)
+income = sample(income, 100, replace = TRUE)
+
+data = cbind(gender,ethnicity,income)
+data = as.data.frame(data)
+
+## Create unweighted dataset with survey package
+library(survey)
+data.svy.unweighted <- svydesign(ids=~1, data=data)
+```
+
+Next, the weighting will be performed based on the population gender probabilities. I assume the population values for female (1) and male(2) are .45 and .55.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+gender.dist <- data.frame(gender = c("1","2"),
+                          Freq =nrow(data)*c(0.45, 0.55))
+```
+
+rake function in survey package will be used to weight the data by population gender values.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+data.svy.rake <- rake(design = data.svy.unweighted,
+                      sample.margins = list(~gender),
+                      population.margins = list(gender.dist))
+```
+
+In case the weights is too large or too small, I put limits on the weights using the trimWeights function.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+data.svy.rake.trim <- trimWeights(data.svy.rake, 
+                                  lower=0.3, upper=3,
+                                  strict=TRUE)
+```
+
+Next, I'm going to compare mean of variables in the weighted dataset and the original dataset.
+
+```{r, include=TRUE,warning=FALSE,error=FALSE}
+svymean(data, data.svy.rake.trim) # weighted dataset
+apply(data, 2, mean) # original dataset
+```
