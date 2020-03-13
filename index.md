@@ -21,7 +21,7 @@
 
 ---
 [Project 3: Imputating missing values & Weighting on under-representative variables](/Project 3/Imputation & Weighting code.pdf)
-<img scr="images/Imputation-Weighting.png"/>
+<img src="images/Imputation-Weighting.png"/>
 
 ---
 [Project 4: Data Visualization using Tableau](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
