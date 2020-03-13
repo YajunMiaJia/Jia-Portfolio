@@ -20,7 +20,10 @@
 <img src="images/Clustering Analysis.png"/>
 
 ---
-[Project 3: Data Visualization using Tableau](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
+[Project 3: Imputating missing values & Weighting on under-representative variables]
+
+---
+[Project 4: Data Visualization using Tableau](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
 <img src="images/dashboard.png"/>
 
 ---
@@ -29,7 +32,8 @@
 
 - [Project 1: Time Series Analysis for Predicting Milk Production](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%201/TimeSeries.Rmd)
 - [Project 2: Unsupervised Machine Learning](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
-- [Project 3: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
+- [Project 3: Imputation & Weighting]
+- [Project 4: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
 
 ---
 
