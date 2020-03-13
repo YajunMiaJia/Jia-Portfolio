@@ -37,8 +37,3 @@
 - [Project 4: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
 
 ---
-
-
-
-
----
