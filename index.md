@@ -24,7 +24,7 @@
 <img src="images/Imputation-Weighting.png"/>
 
 ---
-[Project 4: Data Visualization using Tableau](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
+[Project 4: Data Visualization using Tableau](https://public.tableau.com/shared/S3HMYBW5C?:display_count=y&:origin=viz_share_link)
 <img src="images/dashboard.png"/>
 
 ---
@@ -34,6 +34,6 @@
 - [Project 1: Time Series Analysis for Predicting Milk Production](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%201/TimeSeries.Rmd)
 - [Project 2: Unsupervised Machine Learning](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%202/hierarchical%20clustering%20analysis.Rmd)
 - [Project 3: Imputation & Weighting](https://github.com/YajunMiaJia/Jia-Portfolio/blob/master/Project%203/Imputation%20%26%20Weighting%20code.Rmd)
-- [Project 4: Data Visualization](https://public.tableau.com/profile/yajun.jia#!/vizhome/shared/JGPZK2FRQ)
+- [Project 4: Data Visualization](https://public.tableau.com/shared/S3HMYBW5C?:display_count=y&:origin=viz_share_link)
 
 ---
